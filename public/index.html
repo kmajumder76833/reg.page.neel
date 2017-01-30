@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Register</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-controller="AppCtrl">
+	<div id="loginModal" class="modal show" tabindex="-1" role="dialog" style="margin-top: 0px"  >
+  		<div class="modal-dialog">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <h1 class="text-center">Students Registration Form</h1>
+			  </div>
+			  <div class="modal-body" >
+				    <center>
+						<form class="form col-lg-12 ">
+							  <input type="text" class="form-control " name="name" placeholder="Name"  ng-model="student.name"><br>
+							  <input type="number" class="form-control" name="number" placeholder="Mobile No."  ng-model="student.number"><br>
+							  <input type="text" name="email" class="form-control" placeholder="E-mail"  ng-model="student.email"><br>
+							  <input type="text" name="regno" class="form-control" placeholder="Reg. No."  ng-model="student.regno"><br>
+							  <input type="text" name="roll" class="form-control" placeholder="Roll No."  ng-model="student.roll"><br>
+							  <button class="btn btn-primary btn-lg" ng-click="submitData()">Submit</button>
+							  <button class="btn btn-info btn-lg" ng-click="showData()">Show/Hide Records</button>
+							  
+						</form>					
+					</center>
+			  </div>
+			  <div class="modal-footer">
+			  		
+			  </div>
+		  </div>
+  		</div>
+ 	</div>
+ 	<div class="row" ng-show="flag" style="margin-top: 500px;margin-left: 20px">
+						<h1>Registered Students</h1>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Mobile No.</th>
+									<th>E-Mail</th>
+									<th>Reg. No.</th>
+									<th>Roll No.</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="st in studentList">
+									<td>{{st.name}}</td>
+									<td>{{st.number}}</td>
+									<td>{{st.email}}</td>
+									<td>{{st.regno}}</td>
+									<td>{{st.roll}}</td>
+								</tr>
+							</tbody>
+						</table>	
+					</div>
+ 		
+ 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+ 	<script src="modules/app.js"></script>
+</body>
+</html>
